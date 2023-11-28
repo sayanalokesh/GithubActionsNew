@@ -43,8 +43,10 @@ jobs:
         port: ${{ secrets.PORT }}
         script: | 
           cd /home/ubuntu/
-          git config --global --list
-          git config --system --list
+          git config --global user.email "lokesh.sayana@gmail.com"
+          git config --global user.name "sayanalokesh"
+          # Add the remote repository URL
+          git remote add origin_with_token https://sayanalokesh:${{ secrets.ACCESS_TOKEN }}@github.com/sayanalokesh/GithubActionsNew.git
           git clone https://github.com/sayanalokesh/GithubActionsNew.git
           cd GithubActionsNew
           sudo ls
@@ -64,10 +66,10 @@ jobs:
           echo "pull has been successful"
           sudo git merge staging
           echo "merge successful"
-          sudo git push origin production
+          sudo git push origin_with_token production
           echo "pushed to production"
           sudo git tag -a v1.0
-          sudo git push origin v1.0
+          sudo git push origin_with_token v1.0
           # sudo python3 /home/ubuntu/Jenkins/app.py
           
 
