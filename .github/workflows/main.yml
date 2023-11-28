@@ -43,7 +43,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: | 
           cd /home/ubuntu/
-          git clone git@github.com:sayanalokesh/GithubActions.git
+          git clone https://github.com/sayanalokesh/GithubActionsNew.git
           cd GithubActions
           sudo ls
           sudo git checkout staging
