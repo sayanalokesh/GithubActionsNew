@@ -54,12 +54,12 @@ jobs:
           pip install flask
           pip install gunicorn        
           python3 app.py
-          # sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
+          nohup sudo gunicorn -w 4 -b 0.0.0.0:3000 app:app >/dev/null 2>&1 &
           echo "app is up and running fine"
-          # sudo git checkout production
-          # echo "checked out to production branch"
-          # sudo git pull
-          # echo "pull has been successful"
+          sudo git checkout production
+          echo "checked out to production branch"
+          sudo git pull
+          echo "pull has been successful"
           # sudo git merge staging
           # echo "merge successful"
           # sudo git push origin production
