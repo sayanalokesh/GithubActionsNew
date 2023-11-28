@@ -49,11 +49,11 @@ jobs:
           sudo git checkout staging
           sudo echo "checked out to staging branch"
           sudo git pull
-          # sudo echo "pull has been successful"
-          # sudo apt install -y python3-pip
-          # pip install flask
-          # pip install gunicorn          
-          # # sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
+          sudo echo "pull has been successful"
+          sudo apt install -y python3-pip
+          pip install flask
+          pip install gunicorn          
+          # sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
           # echo "app is up and running fine"
           # sudo git checkout production
           # echo "checked out to production branch"
