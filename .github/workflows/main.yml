@@ -60,12 +60,12 @@ jobs:
           echo "checked out to production branch"
           sudo git pull
           echo "pull has been successful"
-          # sudo git merge staging
-          # echo "merge successful"
-          # sudo git push origin production
-          # echo "pushed to production"
-          # sudo git tag -a v1.0
-          # sudo git push origin v1.0
+          sudo git merge staging
+          echo "merge successful"
+          sudo git push origin production
+          echo "pushed to production"
+          sudo git tag -a v1.0
+          sudo git push origin v1.0
           # sudo python3 /home/ubuntu/Jenkins/app.py
           
 
@@ -84,11 +84,11 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu/
-            git clone https://github.com/sayanalokesh/GithubActions.git
+            git clone https://github.com/sayanalokesh/GithubActionsNew.git
             sudo git checkout production
             sudo apt install -y python3-pip
             pip install flask
             pip install gunicorn
-            sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
+            nohup sudo gunicorn -w 4 -b 0.0.0.0:3000 app:app >/dev/null 2>&1 &
           # sudo python3 /home/ubuntu/Jenkins/app.py# Commands to deploy to production server
             # ssh -i ${{secrets.EC2_SSH_KEY}} ubuntu@ec2-52-66-160-84.ap-south-1.compute.amazonaws.com "ls"  # "cd /home/ubuntu && git pull origin staging && sudo systemctl restart jenkins"
