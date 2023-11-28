@@ -49,12 +49,12 @@ jobs:
           sudo git checkout staging
           sudo echo "checked out to staging branch"
           sudo git pull
-          sudo echo "pull has been successful"
-          sudo apt install -y python3-pip
-          sudo pip install flask
-          sudo pip install gunicorn          
-          sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
-          echo "app is up and running fine"
+          # sudo echo "pull has been successful"
+          # sudo apt install -y python3-pip
+          # pip install flask
+          # pip install gunicorn          
+          # # sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
+          # echo "app is up and running fine"
           # sudo git checkout production
           # echo "checked out to production branch"
           # sudo git pull
@@ -86,8 +86,8 @@ jobs:
             git clone https://github.com/sayanalokesh/GithubActions.git
             sudo git checkout production
             sudo apt install -y python3-pip
-            sudo pip install flask
-            sudo pip install gunicorn
+            pip install flask
+            pip install gunicorn
             sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
           # sudo python3 /home/ubuntu/Jenkins/app.py# Commands to deploy to production server
             # ssh -i ${{secrets.EC2_SSH_KEY}} ubuntu@ec2-52-66-160-84.ap-south-1.compute.amazonaws.com "ls"  # "cd /home/ubuntu && git pull origin staging && sudo systemctl restart jenkins"
