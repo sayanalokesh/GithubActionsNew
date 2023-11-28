@@ -53,8 +53,8 @@ jobs:
           sudo apt install -y python3-pip
           pip install flask
           pip install gunicorn          
-          # sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
-          # echo "app is up and running fine"
+          sudo gunicorn -w 4 -b 0.0.0.0:8000 app.py:app &
+          echo "app is up and running fine"
           # sudo git checkout production
           # echo "checked out to production branch"
           # sudo git pull
