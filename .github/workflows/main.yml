@@ -44,7 +44,7 @@ jobs:
         script: | 
           cd /home/ubuntu/
           git clone https://github.com/sayanalokesh/GithubActionsNew.git
-          cd GithubActions
+          cd GithubActionsNew
           sudo ls
           sudo git checkout staging
           sudo echo "checked out to staging branch"
